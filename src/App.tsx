@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import { AnimatePresence } from "motion/react";
 import Chatbox from "./components/Chatbox";
+import { Analytics } from "@vercel/analytics/react";
 
 export interface MessageType {
   role: string;
@@ -70,6 +71,7 @@ const App = () => {
   return (
     <>
       <div className="h-dvh max-h-screen w-full flex flex-col font-geist ">
+        <Analytics />
         <Navbar OpenSidebar={setIsSidebar} />
         <AnimatePresence mode="wait">
           {isSidebar && <Sidebar OpenSidebar={setIsSidebar} />}
